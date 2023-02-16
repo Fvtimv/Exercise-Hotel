@@ -4,7 +4,7 @@ class Hotel{
     private string $_nomHotel;
     private string $_ville;
     private string $_adresse;
-    private string $_codePostal;
+    private string $_codePostal; // string bcs we cannot calculate a codePostal
     private array $_reservations;
     private array $_chambres;
 
@@ -15,7 +15,7 @@ class Hotel{
         $this -> _adresse = $adresse;
         $this -> _codePostal = $codePostal;
         $this -> _reservations = array();
-        $this -> _chambre = array();
+        $this -> _chambres = array();
     }
 
 
@@ -30,15 +30,6 @@ class Hotel{
         return $this;
     }
 
-   public function getNbChambre(){
-        return $this->_nbChambre;
-    }
-
-    public function setNbChambre($nbChambre){
-        $this->_nbChambre = $nbChambre;
-
-        return $this;
-    }
 
     public function getVille(){
         return $this->_ville;
@@ -60,26 +51,15 @@ class Hotel{
         return $this;
     }
 
-    public function getChambreReserve(){
-        return $this->_chambreReserve;
+    public function getCodePostal(){
+        return $this->_codePostal;
     }
 
-    public function setChambreReserve($chambreReserve){
-        $this->_chambreReserve = $chambreReserve;
+    public function setCodePostal($codePostal){
+        $this->_codePostal = $codePostal;
 
         return $this;
     }
-
-    public function getChambreDispo(){
-        return $this->_chambreDispo;
-    }
-
-    public function setChambreDispo($chambreDispo){
-        $this->_chambreDispo = $chambreDispo;
-
-        return $this;
-    }
-
 
 
 
@@ -87,21 +67,43 @@ class Hotel{
         $this -> _reservations[] = $reservation;
     }
 
-    public function ajouterChambre($chambre){
+    public function ajouterChambre($chambres){
+        for ($i = 1; $i <- 30; $i++){
+        // $chambre = new Chambre($i, false, 2, 100.0, false, $this);
         $this -> _chambres[] = $chambre;
+    }
     }
 
 
+    public function infoHotel(){
+        echo "<h2>" .$this -> _nomHotel ." " ."****" ." " .$this -> _ville ."</h2>";
+        echo $this -> _adresse ." " .$this -> _codePostal ." " .strtoupper($this -> _ville) ."<br>";
+    }
 
 
+    public function infoReservation(){
+        if ($this -> _reservations > 0){
+        foreach ($this -> _reservations as $reservation){
+        echo "<h3>" .$reservation ."de l'hôtel" ." " .$this -> _nomHotel ." "  ."****" ." " .$this -> _ville ."</h3>";
+
+    } } else {
+        echo "Aucune réservation !";
+    }
+   
+    }
 
 
+        // count pour calculer les elemnets d'u tableua
+    public function detailHotel(){
+        echo "Nombre de chambres :" .$totChambres ."<br>";
+            foreach($this -> _chambres as $chambre){
+            echo $chambres ."<br>";
+        }
+
+    }
 
 
-
-
-
-
+    $totChambres = count($chambres);
 
 
     public function __toString(){
