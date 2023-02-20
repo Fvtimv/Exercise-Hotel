@@ -94,7 +94,7 @@ class Chambre {
         return $this;
     }
 
-
+    
 
 
     public function ajouterChambre($chambre){
@@ -110,57 +110,11 @@ class Chambre {
 
 
 
-    // public function calcPrix(){
-        
-    //     foreach ($this -> _reservations as $reservation){
-    //         $this -> _prix  += $prix;
-    //     return $this -> calcPrix();
-    //     }
-    // }
-
-
-
- 
-    
-
-    // public function statutChambres(){
-    //     echo "Statuts des chambres de " ."<strong>" .$this -> _hotel -> getNomHotel() ." **** "
-    //     .$this -> _hotel -> getVille() ."</strong>" ."<br>";
-    //     echo "<table>
-    //             <tr>
-    //                 <th> CHAMBRE </th>
-    //                 <th> PRIX </th>
-    //                 <th> WIFI </th>
-    //                 <th> ETAT </th>
-    //             </tr>";
-    //     foreach ($this -> _chambres as $chambre){
-    //         echo "<tr>
-    //                 <td>" .$this -> getNbChambre() ."</td>
-    //                 <td>" .$this -> getPrix() ."</td>
-    //                 <td>" .$this -> getWifi() ."</td>
-    //                 <td>" .$this -> getEtat() ."</td>
-    //             </tr>";
-    //     }
-    //     echo "</table>";
-    // }
-
-
-
-
-
-
     public function __toString(){
         return $this -> _nbChambre ." " .$this -> _nbLit ."<br>";
     }
 
 }  
-
-
-
-
-
-
-
 
 
 
@@ -206,3 +160,13 @@ class Chambre {
     //     }
     // }
     
+
+
+
+    
+    // public function calcPrix(){
+    //     foreach ($this -> _reservations as $reservation){
+    //         $this -> _prix  += $prix;
+    //     return $this -> calcPrix();
+    //     }
+    // }

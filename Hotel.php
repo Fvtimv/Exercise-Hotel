@@ -76,8 +76,6 @@ class Hotel{
         $this -> _chambres[] = $chambre;
   
     }
-
-
     
     //         variable nb que j'instancie à zero
     //         je boucle sur toute mes chambes
@@ -102,10 +100,6 @@ class Hotel{
     }
 
 
-
-
-
-
     public function statutChambres(){
         echo "<h3>Statuts des chambres de " ."<strong>" .$this -> _nomHotel ." **** "
         .$this -> _ville ."</strong>" ."</h3> <br>";
@@ -128,23 +122,6 @@ class Hotel{
     }
 
 
-
-    // public function chambresReservees(){
-    //     $chambresReservees = count($this -> reservations);
-    //     $nb = 0;
-    //     if ($nb += 0){
-    //     foreach ($this -> _reservations as $reservation);
-    //         return $chambresReservees;
-
-    //     }
-    // }
-
-    // public function chambresDispo(){
-    //     $chambresDispo = count($this->_chambres) - count($this-> _reservations);
-    //     return $chambresDispo;
-
-    // }
-
     // count pour calculer les elements d'un tableau
 
     public function infoHotel(){
@@ -153,10 +130,7 @@ class Hotel{
         echo "Nombre de chambres : " .count($this->_chambres) ."<br>";
         echo "Nombre de chambres réservées : " .$this -> chambresReservees() ."<br>";
         echo "Nombre de chambres dispo : " .$this -> chambresDispo() ."<br>";
-
-
     }
-
 
 
     public function reservations(){
@@ -174,7 +148,6 @@ class Hotel{
     
 
 
-
     public function __toString(){
         return $this -> _nomHotel ." " .$this -> _ville ." " .$this -> _adresse
         ." " .$this -> _codePostal ."<br>";
@@ -187,6 +160,28 @@ class Hotel{
 
 
 
+
+
+
+
+
+// what i tried to make before:
+
+    // public function chambresReservees(){
+    //     $chambresReservees = count($this -> reservations);
+    //     $nb = 0;
+    //     if ($nb += 0){
+    //     foreach ($this -> _reservations as $reservation);
+    //         return $chambresReservees;
+
+    //     }
+    // }
+
+    // public function chambresDispo(){
+    //     $chambresDispo = count($this->_chambres) - count($this-> _reservations);
+    //     return $chambresDispo;
+
+    // }
 
 
 

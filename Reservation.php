@@ -72,6 +72,22 @@ class Reservation{
     }
 
 
+    public function calcDate(){
+        $dateDebut = new DateTime ($this -> _dateDebut -> format('d-m-Y'));
+        $dateFin = new DateTime ($this -> _dateFin -> format('d-m-Y'));
+        $diff = $dateDebut -> diff($dateFin);
+        return $diff -> d;
+    }
+
+
+
+    //prix totale d'une reservation
+    public function calcPrix(){
+        $totalRes = $this -> calcDate() * $this -> _chambre -> getPrix();
+        return $totalRes;
+    }
+
+
 
     public function infoReservation(){
         echo "Hotel : " .$this -> _hotel -> getNomHotel() ." **** " .$this -> _hotel -> getVille() ." / " 
@@ -81,17 +97,6 @@ class Reservation{
     }
 
 
-    public function calcDate(){
-        $dateDebut = new DateTime ($this -> _dateDebut -> format('d-m-Y'));
-        $dateFin = new DateTime ($this -> _dateFin -> format('d-m-Y'));
-        $diff = $dateDebut -> diff($dateFin);
-        return $diff -> d;
-    }
-    
-
-
-
-   
 
     public function __toString(){
         //sans ça la page show an error pck I tried to afficher un objet DateTime sous forme de chaîne de caractères, ce qui n'est pas possible.
@@ -108,6 +113,28 @@ class Reservation{
 
 
 
+
+    // public function calcPrix(){
+    //     foreach ($this -> _reservations as $reservation){
+    //         $this -> _chambre -> _getPrix  += $prix;
+    //     return $this -> calcPrix();
+    //     }
+    // }
+
+
+
+// // prix total des reservations d'une personne 
+//     public function prixTotal(){
+//         $totalPersonne = $
+//     }
+
+// public function prixTotal(){
+//     $total = 0;
+//     foreach($this -> _reservations as $reservation){
+//         $total = $total + $this -> calcPrix();
+//     }
+//     return $total;
+// }
 
 
 

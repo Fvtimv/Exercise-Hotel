@@ -51,9 +51,16 @@ echo $client1 -> reservationClient();
 
 
 
-// echo $reservation3 -> calcDate();
+
 // echo $hotel1 -> chambreReservees();
 
 echo $hotel1 -> statutChambres();
+
+
+// echo $reservation2 -> calcDate();
+// echo "<br>";
+// echo $reservation2 -> calcPrix();
+// echo "<br>";
+
 
 ?>

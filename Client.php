@@ -38,12 +38,18 @@ class Client{
 
 
 
-
-
     public function ajouterReservation($reservation){
         $this -> _reservations[] = $reservation;
     }
 
+
+    public function prixTotal(){
+        $totalClient = 0;
+        foreach ($this -> _reservations as $reservation){
+        $totalClient = $totalClient + $reservation -> calcPrix();
+        } 
+        return $totalClient;
+    }
 
 
     public function reservationClient(){
@@ -52,9 +58,8 @@ class Client{
         foreach ($this -> _reservations as $reservation){
             echo $reservation -> infoReservation();
         }
+        echo "Total : " .$this -> prixTotal()  ."<br>";
     }
-
-
 
 
     public function __toString(){
