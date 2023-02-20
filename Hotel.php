@@ -103,6 +103,32 @@ class Hotel{
 
 
 
+
+
+
+    public function statutChambres(){
+        echo "<h3>Statuts des chambres de " ."<strong>" .$this -> _nomHotel ." **** "
+        .$this -> _ville ."</strong>" ."</h3> <br>";
+        echo "<table>
+                <tr>
+                    <th> CHAMBRE </th>
+                    <th> PRIX </th>
+                    <th> WIFI </th>
+                    <th> ETAT </th>
+                </tr>";
+        foreach ($this -> _chambres as $chambre){
+            echo "<tr>
+                    <td>" .$chambre -> getNbChambre() ."</td>
+                    <td>" .$chambre -> getPrix() ." € " ."</td>
+                    <td>" .$chambre -> getWifi() ."</td>
+                    <td>" .$chambre -> getEtat() ."</td>
+                </tr>";
+        }
+        echo "</table>";
+    }
+
+
+
     // public function chambresReservees(){
     //     $chambresReservees = count($this -> reservations);
     //     $nb = 0;

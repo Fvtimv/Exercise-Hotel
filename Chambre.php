@@ -7,6 +7,7 @@ class Chambre {
     private float $_prix; //no " " when declarer in index
     private bool $_etat; // same as wifi is either disponible = false or reservee = true
     private array $_reservations;// on la declare ici aussi 
+    private array $_chambres;
     private Hotel $_hotel;
 
 
@@ -18,6 +19,7 @@ class Chambre {
         $this -> _etat = $etat;
         $this -> _hotel = $hotel;
         $this -> _reservations = array(); // this c pour declarer la function ajouterReservation in this class if we put it here we need to declarer it after at the bottom
+        $this -> _chambres = array();
         $hotel -> ajouterChambre($this); // ici on declare that the function ajouterChambre it's gonna be put on $hotel
     }
 
@@ -34,9 +36,9 @@ class Chambre {
 
     public function getWifi(){
         if ($this -> _wifi === true){
-            return "oui ";
+            return "Oui ";
         }else{
-            return "non";
+            return "Non";
         }
     }
 
@@ -68,7 +70,12 @@ class Chambre {
     }
 
     public function getEtat(){
-        return $this->_etat;
+        if ($this -> _etat === true){
+        return "DISPONIBLE";
+        }else{
+            return "RESERVEE";
+        }
+        
     }
  
     public function setEtat($etat){
@@ -90,6 +97,13 @@ class Chambre {
 
 
 
+    public function ajouterChambre($chambre){
+      
+        $this -> _chambres[] = $chambre;
+  
+    }
+
+
     public function ajouterReservation($reservation){ // this is how we state it the $this -> _reservations = array()
         $this -> _reservations[] = $reservation;
     }
@@ -105,7 +119,59 @@ class Chambre {
     // }
 
 
-    // public function chambreDispo(){
+
+ 
+    
+
+    // public function statutChambres(){
+    //     echo "Statuts des chambres de " ."<strong>" .$this -> _hotel -> getNomHotel() ." **** "
+    //     .$this -> _hotel -> getVille() ."</strong>" ."<br>";
+    //     echo "<table>
+    //             <tr>
+    //                 <th> CHAMBRE </th>
+    //                 <th> PRIX </th>
+    //                 <th> WIFI </th>
+    //                 <th> ETAT </th>
+    //             </tr>";
+    //     foreach ($this -> _chambres as $chambre){
+    //         echo "<tr>
+    //                 <td>" .$this -> getNbChambre() ."</td>
+    //                 <td>" .$this -> getPrix() ."</td>
+    //                 <td>" .$this -> getWifi() ."</td>
+    //                 <td>" .$this -> getEtat() ."</td>
+    //             </tr>";
+    //     }
+    //     echo "</table>";
+    // }
+
+
+
+
+
+
+    public function __toString(){
+        return $this -> _nbChambre ." " .$this -> _nbLit ."<br>";
+    }
+
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// public function chambreDispo(){
     //     $nChambres = 0;
     //     $nChambres = count($this -> $nChambres);
         // $nChambres = $this -> $chambre - 
@@ -140,13 +206,3 @@ class Chambre {
     //     }
     // }
     
-
-
-
-
-
-
-    public function __toString(){
-        return $this -> _nbChambre ." " .$this -> _nbLit ."<br>";
-    }
-}

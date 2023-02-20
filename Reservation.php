@@ -77,7 +77,7 @@ class Reservation{
         echo "Hotel : " .$this -> _hotel -> getNomHotel() ." **** " .$this -> _hotel -> getVille() ." / " 
         ."Chambre : " .$this -> _chambre -> getNbChambre() ." ( " .$this -> _chambre -> getNbLit() ." lits - " 
         .$this -> _chambre -> getPrix() ." € - Wifi"  ." : " .$this -> getchambre() -> getWifi() ." ) 
-        " ." du "  .$this -> _dateDebut -> format('d-m-Y')." au " .$this -> _dateFin -> format('d-m-Y') ." " ."<br>";
+        " ." du "  .$this -> _dateDebut -> format('d-m-Y')." au " .$this -> _dateFin -> format('d-m-Y') ." " ."<br> <br>";
     }
 
 
@@ -88,6 +88,8 @@ class Reservation{
         return $diff -> d;
     }
     
+
+
 
    
 
