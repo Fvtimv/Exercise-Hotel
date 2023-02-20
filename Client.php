@@ -4,14 +4,13 @@ class Client{
     private string $_nom;
     private string $_prenom;
     private array $_reservations; // c par la suite la creation de reservation
-    // private Hotel $_hotel;
+
     
 
     public function __construct($nom, $prenom){
         $this -> _nom = $nom;
         $this -> _prenom = $prenom;
         $this -> _reservations = array();
-        // $this -> _hotel = $hotel;
     }
 
 
@@ -39,23 +38,68 @@ class Client{
 
 
 
+
+
     public function ajouterReservation($reservation){
         $this -> _reservations[] = $reservation;
     }
 
-    // public function reservationsClient(){
+
+
+    public function reservationClient(){
+        echo "<h3> Réservations de " .$this -> _prenom ." " .$this -> _nom ."</h3>";
+        echo count($this->_reservations) ." RESERVATIONS <br><br>";
+        foreach ($this -> _reservations as $reservation){
+            echo $reservation -> infoReservation();
+        }
+    }
+
+
+
+
+    public function __toString(){
+        return $this -> _prenom ." " .$this -> _nom ." " ;
+    }
+
+
+
+
+
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// public function reservationsClient(){
     //     foreach ($this -> _reservations as $reservation){
     //     echo "<span style = 'font-weight : bold'> Hotel :" .$this -> _hotel = getNomHotel()
     //     ." "  ."****" ." " .$this -> _hotel = getVille() ."</span>";
     // }
     // }
 
-
-
-    public function __toString(){
-        return $this -> _nom ." " .$this -> _prenom ." " ."<br>";
-    }
-
-
-
-}

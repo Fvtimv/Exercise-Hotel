@@ -63,47 +63,47 @@ class Hotel{
 
 
 
+
+
     public function ajouterReservation($reservation){
         $this -> _reservations[] = $reservation;
     }
 
-    public function ajouterChambre($chambres){
-        for ($i = 1; $i <- 30; $i++){
-        // $chambre = new Chambre($i, false, 2, 100.0, false, $this);
+
+
+    public function ajouterChambre($chambre){
+      
         $this -> _chambres[] = $chambre;
-    }
+  
     }
 
+
+    // count pour calculer les elements d'un tableau
 
     public function infoHotel(){
         echo "<h2>" .$this -> _nomHotel ." " ."****" ." " .$this -> _ville ."</h2>";
         echo $this -> _adresse ." " .$this -> _codePostal ." " .strtoupper($this -> _ville) ."<br>";
+        echo "Nombre de chambres : " .count($this->_chambres) ."<br>";
+        // echo "Nombre de chambres dispo : " .count();
+
     }
 
 
-    public function infoReservation(){
+
+    public function reservations(){
+        echo "<h3> Réservations de l'hôtel " .$this -> _nomHotel ." " ."****" .$this -> _ville ."</h3>";
+        echo count($this->_reservations) ." RESERVATIONS <br><br>";
         if ($this -> _reservations > 0){
-        foreach ($this -> _reservations as $reservation){
-        echo "<h3>" .$reservation ."de l'hôtel" ." " .$this -> _nomHotel ." "  ."****" ." " .$this -> _ville ."</h3>";
-
-    } } else {
-        echo "Aucune réservation !";
-    }
-   
-    }
-
-
-        // count pour calculer les elemnets d'u tableua
-    public function detailHotel(){
-        echo "Nombre de chambres :" .$totChambres ."<br>";
-            foreach($this -> _chambres as $chambre){
-            echo $chambres ."<br>";
+            foreach ($this -> _reservations as $reservation)
+                echo $reservation;
         }
-
+         else {
+            echo "Aucune réservation ! <br>";
+        }
     }
 
+    
 
-    $totChambres = count($chambres);
 
 
     public function __toString(){
@@ -112,4 +112,37 @@ class Hotel{
     }
   
 
-}
+}       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // if ($this -> _hotel -> _reservations > 0){
+        //   echo $this -> _client -> getPrenom() .$this -> _client -> getNom() ."-"  .$this -> _hotel -> _reservation ."<br>" ;
+ 
+        //   } else {
+        //   echo "Aucune réservation !";
+
+
+
+
+
+
+//$reservation, $chambre here above will bring the toString that I made in class Reservation and Chambre
+//it just need to be declarer dans les variables 
+
+
+
+
+

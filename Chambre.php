@@ -33,7 +33,11 @@ class Chambre {
     }
 
     public function getWifi(){
-        return $this->_wifi;
+        if ($this -> _wifi === true){
+            return "oui ";
+        }else{
+            return "non";
+        }
     }
 
     public function setWifi($wifi){
@@ -85,13 +89,69 @@ class Chambre {
 
 
 
+
     public function ajouterReservation($reservation){ // this is how we state it the $this -> _reservations = array()
         $this -> _reservations[] = $reservation;
     }
 
 
+
+    // public function calcPrix(){
+        
+    //     foreach ($this -> _reservations as $reservation){
+    //         $this -> _prix  += $prix;
+    //     return $this -> calcPrix();
+    //     }
+    // }
+
+
+    // public function chambreDispo(){
+    //     $nChambres = 0;
+    //     $nChambres = count($this -> $nChambres);
+        // $nChambres = $this -> $chambre - 
+
+        // echo "Nombre de chambres dispo : " .$nChambres ."<br>";
+
+    // }
+    
+    // c juste ça: 
+
+    // public function chambreReservees(){
+    //     $nb = 0;
+    //     foreach ($this -> _chambres as $chambre){
+    //     if ($this -> _chambre -> etat === true){
+    //             echo $nb += 1;
+    //         }
+    //     }
+    // }
+
+
+    // essaie pour vois si ça marche
+    public function chambreReservees(){
+        $nb = 0;
+        foreach ($this -> _reservations as $reservation){
+        if ($this -> _etat === true){
+                $nb += 1;
+            }
+        }
+    }
+    
+    public function chambreDispo(){
+        $totChambres = count($this->_chambres);
+
+    }
+
+
+
+
+    //         variable nb que j'instancie à zero
+    //         je boucle sur toute mes chambes
+    //         si statut de la chambre est true 
+    //         alors nb += 1 
+
+
+
     public function __toString(){
-        return $this -> _nbChambre ." " .$this -> _wifi ." " .$this -> _nbLit
-        ." " .$this -> _prix .$this -> _etat ."<br>";
+        return $this -> _nbChambre ." " .$this -> _nbLit ."<br>";
     }
 }
