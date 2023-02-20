@@ -54,7 +54,7 @@ class Client{
 
     public function reservationClient(){
         echo "<h3> Réservations de " .$this -> _prenom ." " .$this -> _nom ."</h3>";
-        echo count($this->_reservations) ." RESERVATIONS <br><br>";
+        echo '<button class = "btn btn-success" style = "background-color: #9AD06E; color:white; border-color:#9AD06E">' .count($this->_reservations) ." RESERVATIONS" .'</button>' ."<br><br>";
         foreach ($this -> _reservations as $reservation){
             echo $reservation -> infoReservation();
         }

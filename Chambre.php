@@ -71,9 +71,9 @@ class Chambre {
 
     public function getEtat(){
         if ($this -> _etat === true){
-        return "DISPONIBLE";
+            return  '<button class="btn btn-success" style = "background-color:#9AD06E; color:white; border-color:#9AD06E"> DISPONIBLE </button> <br>';
         }else{
-            return "RESERVEE";
+           return  '<button class="uk-button uk-button-danger"  style = "background-color: #ff4122; color:white; border-color: #ff4122"> RESERVEE </button> <br>';
         }
         
     }
@@ -94,7 +94,7 @@ class Chambre {
         return $this;
     }
 
-    
+
 
 
     public function ajouterChambre($chambre){

@@ -112,7 +112,7 @@ class Hotel{
                 </tr>";
         foreach ($this -> _chambres as $chambre){
             echo "<tr>
-                    <td>" .$chambre -> getNbChambre() ."</td>
+                    <td> Chambre " .$chambre -> getNbChambre() ."</td>
                     <td>" .$chambre -> getPrix() ." € " ."</td>
                     <td>" .$chambre -> getWifi() ."</td>
                     <td>" .$chambre -> getEtat() ."</td>
@@ -135,7 +135,7 @@ class Hotel{
 
     public function reservations(){
         echo "<h3> Réservations de l'hôtel " .$this -> _nomHotel ." " ."****" .$this -> _ville ."</h3>";
-        echo count($this->_reservations) ." RESERVATIONS <br><br>";
+        echo '<button class = "btn btn-success" style = "background-color: #9AD06E; color:white; border-color:#9AD06E">'  .count($this->_reservations) ." RESERVATIONS "  .'</button> <br> <br>';
         if ($this -> _reservations > 0){
             foreach ($this -> _reservations as $reservation)
                 echo $reservation;
