@@ -78,13 +78,56 @@ class Hotel{
     }
 
 
+    
+    //         variable nb que j'instancie à zero
+    //         je boucle sur toute mes chambes
+    //         si statut de la chambre est true 
+    //         alors nb += 1 
+
+
+   
+    public function chambresReservees(){
+        $chambresReservees = count($this -> _reservations);
+        if ($chambresReservees += 0){
+        foreach ($this -> _reservations as $reservation){  
+        }
+            return $chambresReservees;
+    }
+}
+
+    public function chambresDispo(){
+            $chambresDispo = count($this->_chambres) - $this-> chambresReservees();
+            return $chambresDispo;
+
+    }
+
+
+
+    // public function chambresReservees(){
+    //     $chambresReservees = count($this -> reservations);
+    //     $nb = 0;
+    //     if ($nb += 0){
+    //     foreach ($this -> _reservations as $reservation);
+    //         return $chambresReservees;
+
+    //     }
+    // }
+
+    // public function chambresDispo(){
+    //     $chambresDispo = count($this->_chambres) - count($this-> _reservations);
+    //     return $chambresDispo;
+
+    // }
+
     // count pour calculer les elements d'un tableau
 
     public function infoHotel(){
         echo "<h2>" .$this -> _nomHotel ." " ."****" ." " .$this -> _ville ."</h2>";
         echo $this -> _adresse ." " .$this -> _codePostal ." " .strtoupper($this -> _ville) ."<br>";
         echo "Nombre de chambres : " .count($this->_chambres) ."<br>";
-        // echo "Nombre de chambres dispo : " .count();
+        echo "Nombre de chambres réservées : " .$this -> chambresReservees() ."<br>";
+        echo "Nombre de chambres dispo : " .$this -> chambresDispo() ."<br>";
+
 
     }
 

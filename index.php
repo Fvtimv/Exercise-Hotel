@@ -52,7 +52,7 @@ echo $client1 -> reservationClient();
 
 
 echo $reservation3 -> calcDate();
-
+// echo $hotel1 -> chambreReservees();
 
 
 ?>

@@ -113,6 +113,8 @@ class Chambre {
         // echo "Nombre de chambres dispo : " .$nChambres ."<br>";
 
     // }
+
+
     
     // c juste ça: 
 
@@ -126,28 +128,21 @@ class Chambre {
     // }
 
 
+  
+
     // essaie pour vois si ça marche
-    public function chambreReservees(){
-        $nb = 0;
-        foreach ($this -> _reservations as $reservation){
-        if ($this -> _etat === true){
-                $nb += 1;
-            }
-        }
-    }
+    // public function chambreReservees(){
+    //     $nb = 0;
+    //     foreach ($this -> _reservations as $reservation){
+    //     if ($this -> _etat === true){
+    //             $nb += 1;
+    //         }
+    //     }
+    // }
     
-    public function chambreDispo(){
-        $totChambres = count($this->_chambres);
-
-    }
 
 
 
-
-    //         variable nb que j'instancie à zero
-    //         je boucle sur toute mes chambes
-    //         si statut de la chambre est true 
-    //         alors nb += 1 
 
 
 
