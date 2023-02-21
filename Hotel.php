@@ -103,8 +103,8 @@ class Hotel{
     public function statutChambres(){
         echo "<h3>Statuts des chambres de " ."<strong>" .$this -> _nomHotel ." **** "
         .$this -> _ville ."</strong>" ."</h3> <br>";
-        echo "<table>
-                <tr>
+        echo "<table style='width:700px'>
+                <tr style ='text-align:justify'>
                     <th> CHAMBRE </th>
                     <th> PRIX </th>
                     <th> WIFI </th>
@@ -112,10 +112,10 @@ class Hotel{
                 </tr>";
         foreach ($this -> _chambres as $chambre){
             echo "<tr>
-                    <td> Chambre " .$chambre -> getNbChambre() ."</td>
-                    <td>" .$chambre -> getPrix() ." € " ."</td>
-                    <td>" .$chambre -> getWifi() ."</td>
-                    <td>" .$chambre -> getEtat() ."</td>
+                    <td style = 'padding-bottom:20px; padding-top: 20px'> Chambre " .$chambre -> getNbChambre() ."</td>
+                    <td style = 'padding-bottom:20px'>" .$chambre -> getPrix() ." € " ."</td>
+                    <td style = 'padding-bottom:20px'>" .$chambre -> getWifi() ."</td>
+                    <td style = 'padding-bottom:20px'>" .$chambre -> getEtat() ."</td>
                 </tr>";
         }
         echo "</table>";
